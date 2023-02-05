@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loading from "./Loading";
 import Newsitem from "./Newsitem";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export class News extends Component {
   static defaultProps = {
@@ -43,15 +44,35 @@ export class News extends Component {
     this.setState({page: this.state.page - 1});
     this.UpdateNews();
   };
+  fetchMoreData = async()=>{
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=a4c81365f47a4acfa43ae2bb89d95745&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+    this.setState({ loading: true });
+    let data = await fetch(url);
+    let array = await data.json();
+    this.setState({
+      articles: this.state.articles.concat(array.articles),
+      totalResults: array.totalResults,
+      loading: false,
+      page: this.state.page + 1
+    });
+  }
 
   render() {
     return (
       <div>
         <h2 className="text-center" style={{marginTop:'20px'}}>Top Headlines - By News Monkey </h2>
         {this.state.loading && <Loading />}
+        <InfiniteScroll
+          dataLength={this.state.articles.length}
+          next={this.fetchMoreData}
+          hasMore={this.state.articles.length!==this.state.totalResults}
+          loader={<Loading/>}
+        >
         <div className="container my-3">
           <div className="row">
-            {this.state.articles.map((element) => {
+
+          
+          {this.state.articles.map((element) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <Newsitem
@@ -67,8 +88,11 @@ export class News extends Component {
                 </div>
               );
             })}
+          
+        
+            
 
-            {!this.state.loading && (
+            {/* {!this.state.loading && (
               <div className="container d-flex justify-content-between">
               <button
                 disabled={this.state.page <= 1}
@@ -89,9 +113,10 @@ export class News extends Component {
                 Next ➡
               </button>
             </div>
-            )}
+            )} */}
           </div>
         </div>
+        </InfiniteScroll>
       </div>
     );
   }
