@@ -20,7 +20,7 @@ export class News extends Component {
   }
    async UpdateNews(){
     this.props.setProgress(10);
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=a4c81365f47a4acfa43ae2bb89d95745&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     this.props.setProgress(50);
@@ -48,7 +48,7 @@ export class News extends Component {
   //   this.UpdateNews();
   // };
   fetchMoreData = async()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=a4c81365f47a4acfa43ae2bb89d95745&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let array = await data.json();
@@ -62,7 +62,7 @@ export class News extends Component {
 
   render() {
     return (
-      <div>
+      <div >
         <h2 className="text-center" style={{marginTop:'20px'}}>Top Headlines - By News Monkey </h2>
         {this.state.loading && <Loading />}
         <InfiniteScroll

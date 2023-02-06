@@ -27,7 +27,7 @@ export class Newsitem extends Component {
                 {new Date(this.props.publishedAt).toGMTString().slice(0, 16)}
               </small>
             </p>
-            <a href={url} className="btn btn-primary">
+            <a href={url} className="btn btn-secondary">
               Read more
             </a>
             <div
@@ -39,7 +39,7 @@ export class Newsitem extends Component {
                 justifyContent: "flex-end",
               }}
             >
-              <span className="badge rounded-pill bg-warning">
+              <span className="badge rounded-pill bg-danger">
                 {this.props.name}
                 <span className="visually-hidden">unread messages</span>
               </span>
