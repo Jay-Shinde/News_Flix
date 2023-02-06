@@ -30,10 +30,20 @@ export class Newsitem extends Component {
             <a href={url} className="btn btn-primary">
               Read more
             </a>
-            <span className="position-absolute top-0 translate-middle badge rounded-pill bg-warning" style={{left: '90%', zIndex:'1'}}>
-              {this.props.name}
-              <span className="visually-hidden">unread messages</span>
-            </span>
+            <div
+              className="container"
+              style={{
+                position: "absolute",
+                top: "0",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <span className="badge rounded-pill bg-warning">
+                {this.props.name}
+                <span className="visually-hidden">unread messages</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
