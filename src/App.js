@@ -8,12 +8,12 @@ import LoadingBar from 'react-top-loading-bar'
 export default class App extends Component {
 
   state = {
-    progress:0
+    progress:0                                                        
   }
   setProgress=(progress)=>{
     this.setState({progress: progress});
   }
-  api = 'a4c81365f47a4acfa43ae2bb89d95745';
+  api = process.env.React_APP_NEWS_API;
 
 
   render() {
