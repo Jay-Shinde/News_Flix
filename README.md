@@ -1,10 +1,10 @@
 
 ## NEWS_MONKEY is a news website built using React.js and NewsApi. Here are some fetures of websites :
 
--Filter for categories ex. Entertainment, Technology, Sports etc.
--Infinite scroll.
--Loading bar at the top.
--All the news well presented in the cards.
+-Filter for categories ex. Entertainment, Technology, Sports etc.\
+-Infinite scroll.\
+-Loading bar at the top.\
+-All the news well presented in the cards.\
 -Fully responsive.
 
 ![Screen Shot](https://user-images.githubusercontent.com/90144181/236601903-788a1ca7-fabd-42bb-871a-4a899ed75658.png)
