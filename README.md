@@ -7,6 +7,10 @@
 -All the news well presented in the cards.
 -Fully responsive.
 
+  
+[Demo Video Link](https://www.canva.com/design/DAFiHfbIPnc/ZGcoZZkHfYXiINh8X0S_lw/watch?utm_content=DAFiHfbIPnc&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+
+
 ![Screen Shot](https://user-images.githubusercontent.com/90144181/236601903-788a1ca7-fabd-42bb-871a-4a899ed75658.png)
 
 
