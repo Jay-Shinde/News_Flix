@@ -1,5 +1,5 @@
 
-## NEWS_MONKEY is a news website built using React.js and NewsApi. Here are some fetures of websites :
+## News_Flix is a news website built using React.js and NewsApi. Here are some fetures of websites :
 
 -Filter for categories ex. Entertainment, Technology, Sports etc.\
 -Infinite scroll.\
