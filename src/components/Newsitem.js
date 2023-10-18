@@ -1,8 +1,7 @@
-import React, { Component } from "react";
 
-export class Newsitem extends Component {
-  render() {
-    let { title, description, imgUrl, url } = this.props;
+const Newsitem =(props)=> {
+  
+    let { title, description, imgUrl, url } = props;
     return (
       <div>
         <div className="card my-2">
@@ -23,8 +22,8 @@ export class Newsitem extends Component {
             </p>
             <p className="card-text">
               <small className="text-muted">
-                By {!this.props.author ? "Unknown" : this.props.author} on{" "}
-                {new Date(this.props.publishedAt).toGMTString().slice(0, 16)}
+                By {!props.author ? "Unknown" : props.author} on{" "}
+                {new Date(props.publishedAt).toGMTString().slice(0, 16)}
               </small>
             </p>
             <a href={url} className="btn btn-secondary">
@@ -40,7 +39,7 @@ export class Newsitem extends Component {
               }}
             >
               <span className="badge rounded-pill bg-danger">
-                {this.props.name}
+                {props.name}
                 <span className="visually-hidden">unread messages</span>
               </span>
             </div>
@@ -48,7 +47,7 @@ export class Newsitem extends Component {
         </div>
       </div>
     );
-  }
+  
 }
 
 export default Newsitem;
